@@ -1,24 +1,18 @@
-// arrays, objetos
+let meta = {
+    value: "Ler um livro por mês",
+    checkd: true
+}
 
-let metas = {
-    date: "20/04/2024",
-    value: 'ler um livro todo mês',
-    checkd: false,
-    log: (info) => {
-        console.log(info)
+
+let metas = [
+    meta, {
+        value: "Ir na academia 5x vezes na semana",
+        checkd: true
+    },
+    {
+        value: "Aprender uma coisa nova todo mês",
+        checkd: false
     }
-}
+]
 
-// manipulação de dados
-metas.value = 'Não é mais ler um livro'
-
-metas.log(metas.value);
-
-// Function // arrow function
-
-const criarMetas = () =>{
-}
-
-function criarMeta(){
-
-}
+console.log(metas[2].value)
