@@ -21,3 +21,35 @@ Como um lego, você ira utilizar peças para criar algoritmos, ou seja, para res
 - Coletar os dados
 - Processar os dados (Manipular, alterar...)
 - Apresentar os dados
+
+## Escopo e Variáveis
+- Variáveis globais e locais
+- Constantes
+
+## Tipos de dados
+- [*] Strings (Textos): "", '', ´´
+- [*] Number(Números): 1, 3.4 
+- [*] boolean: true, false
+
+
+## Operadores: 
+- [*] Operadores de atribuição de valor: =
+- [*] Operador de concatenação: +
+
+
+## Estruturas de dados:
+
+## Arrays:
+
+- [*] Uma lista que contém qualquer tipo de dado
+
+## Objeto:
+
+- [*] Atributos e métodos
+- [*] Criação e manipulação de objetos
+- [*] Acesso e propriedades de objetos
+
+### Functions
+- [*] criar
+- [*] executar
+- [*] arrow functions / named function
