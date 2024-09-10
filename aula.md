@@ -35,6 +35,7 @@ Como um lego, você ira utilizar peças para criar algoritmos, ou seja, para res
 ## Operadores: 
 - [*] Operadores de atribuição de valor: =
 - [*] Operador de concatenação: +
+- [*] Operadores de comparação: == (igual), != (diferente), < >(maior e menor que), <= => (maior ou igual / menor ou igual). 
 
 
 ## Estruturas de dados:
@@ -61,7 +62,7 @@ Como um lego, você ira utilizar peças para criar algoritmos, ou seja, para res
 
 ## Condicionais
 - [*] Switch
-
+- [*] IF/ELSE
 
 ## Módulos em Node.js
 
