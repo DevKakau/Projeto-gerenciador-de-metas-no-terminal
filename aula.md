@@ -57,3 +57,7 @@ Como um lego, você ira utilizar peças para criar algoritmos, ou seja, para res
 ## Estrutura de repetição
 
 - [*] WHILE
+
+
+## Condicionais
+- [*] Switch
