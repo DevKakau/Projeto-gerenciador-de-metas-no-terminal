@@ -6,19 +6,22 @@ let meta = {
 }
 
 let metas = [meta]
+let mensagem = 'Bem vindo ao APP de Metas'
 
 const cadastrarMeta = async() =>{
     const meta  = await input( {message: 'Digite a meta:'} );
 
     if(meta.length == 0){
-        console.log('Não pode cadastrar uma meta vazia.')
+        mensagem = ('Não pode cadastrar uma meta vazia.')
         return;
         // se eu utilizar somente o return, vai encerrar a função e voltar para o menu, mas se eu quiser posso deixar o usuario preso até ele escrever uma meta basta utilizar o return cadastrarMeta();
     } else if(meta == " "){
-        console.log('Não pode cadastrar uma meta vazia');
+        mensagem = ('Não pode cadastrar uma meta vazia');
         return
     }
     metas.push( {value: meta, checked: false }); // adicionando meta ao array; 
+
+    mensagem = 'Meta cadastrada com sucesso';
 }
 
 const listarMetas = async() => {
@@ -32,8 +35,8 @@ const listarMetas = async() => {
         m.checked = false
     })
 
-    if(respostas.length == 0 ){
-        console.log('Nenhuma meta selecionada!')
+    if(respostas.length === 0 ){
+        mensagem = ('Nenhuma meta selecionada!')
         return
     }
 
@@ -45,7 +48,7 @@ const listarMetas = async() => {
         meta.checked  = true;
     })
 
-    console.log('Meta(s) concluídas(s)')
+    mensagem = ('Meta(s) concluídas(s)')
 }
 
 const metasRealizadas = async() =>{
@@ -54,7 +57,7 @@ const metasRealizadas = async() =>{
     })
 
     if(realizadas.length == 0){
-        console.log('Não existe nenhuma meta realizada! :(');
+        mensagem = 'Não existe nenhuma meta realizada! :(';
         return;
     }
 
@@ -71,7 +74,7 @@ const metasAbertas = async() => {
     })
 
     if(abertas.length == 0){
-        console.log('Não a nenhuma meta em aberto');
+        mensagem = 'Não a nenhuma meta em aberto! :)'
         return
     }
 
@@ -82,36 +85,50 @@ const metasAbertas = async() => {
 }
 
 const deletarMetas =async() =>{
+   
 
     const metasDesmarcadas = metas.map((meta) =>{
         return { value: meta.value, checked: false } 
     })
 
+  
+
     const itemsADeletar = await checkbox({
         message: 'Selecione um item para deletar.',
         choices: [...metasDesmarcadas],
         instructions: false, // criando uma copia do array metas
-    })
-
-    if(itemsADeletar == 0){
-        console.log("Nenhum item para deletar");
-        return
+    })  
+    
+    if(itemsADeletar === 0){
+        mensagem = ("Nenhum item para deletar");
+        return;
     }
 
+  
     itemsADeletar.forEach((item) =>{
         metas = metas.filter((meta) => {
             return meta.value != item
         })
     })
 
-    console.log("Meta(s) deleta(s) com sucesso!");
+    mensagem = ("Meta(s) deleta(s) com sucesso!");
 
+    mensagem = 'Meta deletada com sucesso';
+}
 
+const mostrarMensagens = () =>{
+    console.clear();
+    if(mensagem != ''){
+        console.log(mensagem);
+        console.log('')
+        mensagem = ''
+    }
 }
 
 const start = async () => {
 
     while(true){
+        mostrarMensagens(); 
 
         const opcao = await select({
             message: 'Menu >',
@@ -151,7 +168,6 @@ const start = async () => {
         switch(opcao){
             case "cadastrar":
                 await cadastrarMeta();
-                console.log(metas);
                 break
             case "listar":
                 await listarMetas();
