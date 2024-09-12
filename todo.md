@@ -5,3 +5,4 @@
 - [*] marcar/desmarcar metas como concluidas
 - [*] remover metas
 - [*] sistemas de mensagens
+- [*] Persistir Dados
